@@ -74,9 +74,9 @@ int[,,] GetArrayShot(int rows)
                 index = new Random().Next(0, size);
                 arr[i, j, k] = arrayGet[index];
                 //сдвиг
-                for (int x = index; x < size-1; x++)
+                for (int x = index; x < size - 1; x++)
                 {
-                    arrayGet[x] = arrayGet[x+1];
+                    arrayGet[x] = arrayGet[x + 1];
                     count++;
                 }
                 size--;

@@ -70,7 +70,7 @@ int MinSumString(int[,] array)
             minStr = i;
         }
     }
-    return minStr+1;
+    return minStr + 1;
 }
 
 int sizeM = GetNum("Введите размер M: ");
