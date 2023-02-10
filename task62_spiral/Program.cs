@@ -34,8 +34,10 @@ void Spiral(int x, int y, int move)
         else Spiral(x, y - 1, 3);
     }
     else if (move == 3)
+    {
         if (y - 1 >= 0 && array[y - 1, x] == 0) Spiral(x, y - 1, 3);
         else Spiral(x + 1, y, 0);
+    }
 }
 
 void PrintArray2D(int[,] array)
