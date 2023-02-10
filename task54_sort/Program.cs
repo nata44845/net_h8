@@ -49,22 +49,21 @@ void SortArray(int[,] array)
     int cols = array.GetLength(1);
 
     for (int i = 0; i < rows; i++)
-    {   int max=array[i,0];
-        for (int j = 1; j < cols-1; j++)
-        {   
-            if (array[i,j]>max)
-            {
-                max=array[i,j];
-                //сдвиг
-                for (int k=0; k<j; k++)
-                    array[i,k+1]=array[i,k];
-                array[i,0]=max;
-                Console.WriteLine(max);
-            }
+    {
+        for (int j = 0; j < cols - 1; j++)
+        {
+            int max = array[i, j];
+            int maxInd = j;
+            for (int k = j + 1; k < cols; k++)
+                if (array[i, k] > max)
+                {
+                    max = array[i, k];
+                    maxInd = k;
+                }
+            (array[i, j], array[i, maxInd]) = (array[i, maxInd], array[i, j]);
         }
     }
 }
-
 
 int sizeM = GetNum("Введите размер M: ");
 int sizeN = GetNum("Введите размер N: ");
@@ -75,4 +74,5 @@ PrintArray2D(array);
 
 SortArray(array);
 
+Console.WriteLine();
 PrintArray2D(array);
